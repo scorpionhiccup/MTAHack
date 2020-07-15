@@ -83,3 +83,34 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+MNR-Train/*~
+MNR-Train/*.sw[mnpcod]
+MNR-Train/.tmp
+MNR-Train/*.tmp
+MNR-Train/*.tmp.*
+MNR-Train/*.sublime-project
+MNR-Train/*.sublime-workspace
+MNR-Train/.DS_Store
+MNR-Train/Thumbs.db
+MNR-Train/UserInterfaceState.xcuserstate
+MNR-Train/$RECYCLE.BIN/
+
+MNR-Train/*.log
+MNR-Train/log.txt
+MNR-Train/npm-debug.log*
+
+MNR-Train/.idea
+MNR-Train/.ionic
+MNR-Train/.sass-cache
+MNR-Train/.sourcemaps
+MNR-Train/.versions
+MNR-Train/.vscode
+MNR-Train/coverage
+MNR-Train/dist
+MNR-Train/node_modules
+MNR-Train/platforms
+MNR-Train/plugins
+MNR-Train/www
