@@ -1,0 +1,9 @@
+{
+  "name": "MNR-Train",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "dd9e6107"
+}

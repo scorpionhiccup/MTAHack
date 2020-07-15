@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar *ngIf="['origin', 'destination'].includes(title)">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title style="text-transform: capitalize;">
+      {{'Pick ' + title + ' Station'}}
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar *ngIf="['stations'].includes(title)">
+    <ion-title style="text-transform: capitalize;">
+      Stations
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let station of stations">
+      <ion-badge [ngClass]="'badge-' + station.BranchID">{{station.StationName}}</ion-badge>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

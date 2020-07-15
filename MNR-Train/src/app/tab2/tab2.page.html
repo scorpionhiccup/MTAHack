@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Report/ Feedback
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-toolbar style="margin-top: 10px;">
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon name="pencil-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title size="small">Live Trip</ion-title>
+  </ion-toolbar>
+  <ion-card>
+    <ion-item>
+      <ion-label>
+        <span style="font-size: small; font-weight: bold;">
+          {{train.OriginTime + ' - ' + train.DestinationTime}}
+        </span>
+
+        <span style="font-size: smaller; font-weight: normal;">
+          {{'(' + train.Duration + ' min)'}}
+        </span>
+      </ion-label>
+    </ion-item>
+
+    <ion-card-content>
+      <ion-badge [ngClass]="'badge-' + train.OriginID">{{train.Origin}}</ion-badge> &nbsp;
+
+
+      <ion-badge [ngClass]="'badge-' + train.DestinationID">{{train.Destination}}</ion-badge>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-item class="ion-activated">
+      <ion-icon name="warning-outline" slot="start"></ion-icon>
+      <ion-label>Report Violation</ion-label>
+    </ion-item>
+  
+    <!-- <ion-item href="#">
+      <ion-icon name="wine" slot="start"></ion-icon>
+      <ion-label>Emergency</ion-label>
+    </ion-item> -->
+  
+    <ion-item class="ion-activated">
+      <ion-icon name="walk" slot="start"></ion-icon>
+      <ion-label>Indicate Occupancy Level</ion-label>
+    </ion-item>
+
+  </ion-card>
+</ion-content>
