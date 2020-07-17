@@ -1,17 +1,25 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Trips
-    </ion-title>
-  </ion-toolbar>
-</ion-header> -->
+<ion-header slot="fixed">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Trips</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-list style="padding: 40px 5px 5px 5px; background-color: teal;">
+      <ion-item class="ion-item" (click)="pickStation('origin')">
+        <span style="width: 60px;">From: </span>
+        <ion-badge [ngClass]="'badge-' + trainListService.originStation.BranchID">
+          {{trainListService.originStation.StationName}}</ion-badge> &nbsp;
+      </ion-item>
+      <ion-item (click)="pickStation('destination')" class="ion-item">
+        <span style="width: 60px;">To:</span>
+        <ion-badge [ngClass]="'badge-' + trainListService.destinationStation.BranchID">
+          {{trainListService.destinationStation.StationName}}</ion-badge> &nbsp;
+      </ion-item>
+      <ion-item class="ion-item">
+        <span>Depart By:</span>
+        <ion-datetime displayFormat="MMM DD, YYYY HH:mm" (ionChange)="dateChanged($event)"
+          [value]="trainListService.dtime"></ion-datetime>
+      </ion-item>
+    </ion-list>
 
+</ion-header>
+
+<ion-content>
   <app-train-list></app-train-list>
 </ion-content>

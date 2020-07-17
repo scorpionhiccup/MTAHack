@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
-@Component({
-  selector: 'app-train-list',
-  templateUrl: './train-list.component.html',
-  styleUrls: ['./train-list.component.scss'],
+@Injectable({
+  providedIn: 'root'
 })
-export class TrainListComponent implements OnInit {
-  travelDate = new Date()
-  constructor(private router: Router) { }
-
+export class TrainDescriptionService {
   train = {
     "BranchID": 1,
     "BranchIDConn1": 0,
@@ -112,14 +108,14 @@ export class TrainListComponent implements OnInit {
     "Train2MinutesLate": 0,
     "Train3MinutesLate": 0
   }
-  ngOnInit() { }
+  chosenTrip
+  cards = [];
+  trainRefreshed = new Subject()
+  constructor(private httpClient: HttpClient) { }
 
-  pickStation(from) {
-    this.router.navigateByUrl('tabs/stationInfo/' + from);
+  fetchLiveTrainInfo(train: number) {
+    let trainUrl = 'https://mnorthstg.prod.acquia-sites.com/wse/Mymnr/v5/api/train/'
+      + train + '/9de8f3b1-1701-4229-8ebc-346914043f4a/'
+    return this.httpClient.get(trainUrl)
   }
-
-  describeTrain(id) {
-    this.router.navigateByUrl('tabs/trainDesc/tab1/' + id);
-  }
-
 }

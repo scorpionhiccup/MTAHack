@@ -27,7 +27,9 @@
     "@ionic/pwa-elements": "^1.5.2",
     "cordova": "^9.0.0",
     "cordova-android": "8.1.0",
+    "cordova-ios": "5.1.1",
     "native-run": "^1.0.0",
+    "moment": "^2.26.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -71,6 +73,9 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {}
-    }
+    },
+    "platforms": [
+      "ios"
+    ]
   }
 }

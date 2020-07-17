@@ -1,0 +1,74 @@
+<!-- <ion-list *ngIf="error == ''"> -->
+<!-- <ion-item > -->
+<!-- <div *ngIf="error == ''"> -->
+<!-- <ion-content *ngIf="error == ''" style="margin-bottom: 100px"> -->
+
+<div *ngIf="dataLoading" >
+  <ion-list style="background-color: #e6e6e6;">
+    <ion-card *ngFor="let skx of [0,1,2]">
+      <ion-item>
+        <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+      </ion-item>
+      <ion-item>
+        <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+      </ion-item>
+      <ion-item>
+        <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+</div>
+
+<ion-card *ngFor="let train of activeTrains" (click)="describeTrain(train)">
+
+  <ion-list style="padding: 0px;">
+    <ion-item>
+      <span style="font-size: small; font-weight: bold;">
+        {{train.OriginTime + ' - ' + train.DestinationTime}}
+      </span> &nbsp;
+      <span style="font-size: smaller; font-weight: normal;">
+        {{'(' + train.Duration + ' min)'}}
+      </span>
+
+    </ion-item>
+    <ion-item>
+      <span style="font-size: smaller;">
+        <ion-badge *ngIf="train.Transfer1" style="text-transform: capitalize; font-size: smaller; margin-right: 5px;"
+          [ngClass]="'badge-' + stationListService.stationbranchMapping.get(train.Transfer1)">
+          {{train.Transfer1}} </ion-badge>
+        <ion-badge *ngIf="train.Transfer2" style="text-transform: capitalize; font-size: smaller; margin-right: 5px;"
+          [ngClass]="'badge-' + stationListService.stationbranchMapping.get(train.Transfer2)">
+          {{train.Transfer2}} </ion-badge>
+
+        <ion-badge style="text-transform: capitalize; font-size: smaller;"
+          [ngClass]="'badge-' + stationListService.stationbranchMapping.get(train.Destination)">
+          {{train.Destination}}</ion-badge>
+      </span>
+
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <span style="font-size: small; font-weight: normal; float: left;">
+          {{train.Peak == 0 ? 'Off Peak' : 'Peak'}}
+        </span>
+        <span style="font-size: small; font-weight: normal; float: right;">
+          {{train.TrainStatus}}
+        </span>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-card>
+<ion-card *ngIf="error != ''">
+  <ion-card-header>
+    <ion-card-subtitle>Error</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{error}}
+  </ion-card-content>
+</ion-card>
+<!-- </ion-content> -->
+
+
+<!-- </div> -->

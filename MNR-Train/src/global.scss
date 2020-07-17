@@ -41,16 +41,20 @@
 }
 
 .badge-3 {
+    background-color: pink;
+    color: black;
+}
+
+.badge-2 {
     background-color: blue;
     color: white;
 }
 
-.badge-2 {
-    background-color: green;
+.badge-1 {
+    background-color: gray;
     color: white;
 }
 
-.badge-1 {
-    background-color: red;
-    color: white;
+ion-content {
+    --background:#e6e6e6;
 }

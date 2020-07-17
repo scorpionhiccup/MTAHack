@@ -1,0 +1,37 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>
+      <ion-badge style="text-transform: capitalize;" [ngClass]="'badge-' + station.BranchID">
+        {{station.StationName}}</ion-badge>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)='dismissModal()'>X</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <div style="opacity: 0.6;width: 30vw; height: 18px; background-color: green; padding: 10px">
+      </div>
+      <div style="opacity: 0.6;width: 20vw; height: 18px; background-color: red; padding: 10px;">
+     
+      </div>
+      <div style="width: 2vw; height: 18px; background-color: red; padding: 10px; opacity: 1">
+      </div>
+      <div style="opacity: 0.6;width: 10vw; height: 18px; background-color: green; padding: 10px">
+      </div>
+      <div style="opacity: 0.6;width: 30vw; height: 18px; background-color: #abb705; padding: 10px">
+      </div>
+
+    </ion-item>
+    <ion-item>
+      <span slot="start">0</span>
+      <span slot="end">24</span>
+
+    </ion-item>
+
+  </ion-card>
+  <ion-card style="height: 70vh; background-image: url(../../../assets/images/station.png); background-size:cover">
+  </ion-card>
+</ion-content>

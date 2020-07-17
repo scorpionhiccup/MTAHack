@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
-import { StationListComponent } from '../station-list/station-list.component';
-import { TrainDescriptionComponent } from '../train-description/train-description.component';
+import { StationListComponent } from '../shared/station-list/station-list.component';
+import { TrainDescriptionComponent } from '../shared/train-description/train-description.component';
 
 const routes: Routes = [
   {
@@ -14,7 +14,7 @@ const routes: Routes = [
         component: StationListComponent
       },
       {
-        path: 'trainDesc/:source/:trainNumber',
+        path: 'trainDesc/:source',
         component: TrainDescriptionComponent
       },
       {

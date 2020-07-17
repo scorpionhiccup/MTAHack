@@ -1,8 +1,8 @@
-<ion-header>
+<ion-header style="background-color: white;">
   <ion-toolbar *ngIf="['origin', 'destination'].includes(title)">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
+    <ion-button fill="clear" slot="start" (click)="previous()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
 
     <ion-title style="text-transform: capitalize;">
       {{'Pick ' + title + ' Station'}}
@@ -14,10 +14,13 @@
       Stations
     </ion-title>
   </ion-toolbar>
+  <ion-searchbar (input)="setFilteredItems($event.target.value)"></ion-searchbar>
 </ion-header>
 <ion-content>
+
   <ion-list>
-    <ion-item *ngFor="let station of stations">
+
+    <ion-item *ngFor="let station of stations" (click)="stationChange(station)">
       <ion-badge [ngClass]="'badge-' + station.BranchID">{{station.StationName}}</ion-badge>
     </ion-item>
   </ion-list>

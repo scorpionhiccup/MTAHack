@@ -1,0 +1,10 @@
+.col[col-2] {
+    display: grid;
+  
+    ion-icon {
+      display: flex;
+      font-size: 2em;
+      align-self: center;
+      justify-self: center;
+    }
+  }

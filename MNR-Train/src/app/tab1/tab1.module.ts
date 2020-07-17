@@ -5,15 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
-import { TrainListComponent } from './train-list/train-list.component';
+import { SharedModule } from '../shared/shared.module';
+
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    Tab1PageRoutingModule
+    Tab1PageRoutingModule,
+    SharedModule
   ],
-  declarations: [Tab1Page, TrainListComponent]
+  declarations: [Tab1Page]
 })
-export class Tab1PageModule {}
+export class Tab1PageModule { }
